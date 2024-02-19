@@ -34,7 +34,7 @@
                         <label for="" class="">Payment Method</label>
                         <div class="mt-3">
                             <label for=""><input type="radio" name="payment_method" value="cash"> Cash</label><br>
-                            <label for=""><input type="radio" name="payment_method" value="ssl"> Stripe</label>
+                            <label for=""><input type="radio" name="payment_method" value="stripe"> Stripe</label>
                         </div>
                         <input type="hidden" name="package_id" value="{{$package->id}}">
                         <br>

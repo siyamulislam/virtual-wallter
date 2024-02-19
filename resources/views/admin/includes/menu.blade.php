@@ -30,104 +30,119 @@
                 <a  href="{{route('dashboard')}}" aria-expanded="false"
                    aria-controls="sidebarDashboards" class="side-nav-link">
                     <i class="uil-home-alt"></i>
-                    <span> Dashboards </span>
+                    @php $role = auth()->user()->role_type;
+                    @endphp
+                    <span>   {{ $role === 1 ? 'Admin' : ($role === 2 ? 'Editor' : 'User')}} Dashboards
+                    </span>
                 </a>
-
             </li>
 
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarCrm" aria-expanded="false" aria-controls="sidebarCrm"
-                   class="side-nav-link">
-                    <i class="uil uil-tachometer-fast"></i>
-                    <span> Package Module</span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarCrm">
-                    <ul class="side-nav-second-level">
-                       
-                        <li>
-                            <a href="">New Package  </a>
-                        </li>
-                        <li>
-                            <a href="{{route('packages.index')}}">Package</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
+{{--            admin content--}}
 
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarUser" aria-expanded="false"
-                   aria-controls="sidebarEcommerce" class="side-nav-link">
-                    <i class="uil-user"></i>
-                    <span> User Module </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarUser">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="{{route('users.create')}}">Add User</a>
-                        </li>
-                        <li>
-                            <a href="{{route('users.index')}}">Manage User</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarEcommerce" aria-expanded="false"
-                   aria-controls="sidebarEcommerce" class="side-nav-link">
-                    <i class="uil-store"></i>
-                    <span> Slider Module </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarEcommerce">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="#">Add Slider</a>
-                        </li>
-                        <li>
-                            <a href="#">Manage Slider</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
 
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarProjects" aria-expanded="false"
-                   aria-controls="sidebarProjects" class="side-nav-link">
-                    <i class="uil-briefcase"></i>
-                    <span> Contact Module </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarProjects">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="#">Add product</a>
-                        </li>
-                        <li>
-                            <a href="#">Manage product</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarEnroll" aria-expanded="false"
-                   aria-controls="sidebarEnroll" class="side-nav-link">
-                    <i class="uil-briefcase"></i>
-                    <span> Enroll Module </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarEnroll">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="{{route('mange-enroll')}}">Manage Enroll</a>
-                        </li>
-{{--                        <li>--}}
-{{--                            <a href="#">Manage product</a>--}}
-{{--                        </li>--}}
-                    </ul>
-                </div>
-            </li>
+            @if(auth()->user()->role_type === 1)
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#sidebarCrm" aria-expanded="false" aria-controls="sidebarCrm"
+                       class="side-nav-link">
+                        <i class="uil uil-tachometer-fast"></i>
+                        <span> Package Module</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarCrm">
+                        <ul class="side-nav-second-level">
+                            <li>
+                                <a href="">Create Package </a>
+                            </li>
+                            <li>
+                                <a href="{{route('packages.index')}}">Package</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#sidebarUser" aria-expanded="false"
+                       aria-controls="sidebarEcommerce" class="side-nav-link">
+                        <i class="uil-user"></i>
+                        <span> User Module </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarUser">
+                        <ul class="side-nav-second-level">
+                            <li>
+                                <a href="{{route('users.create')}}">Add User</a>
+                            </li>
+                            <li>
+                                <a href="{{route('users.index')}}">Manage User</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#sidebarEnroll" aria-expanded="false"
+                       aria-controls="sidebarEnroll" class="side-nav-link">
+                        <i class="uil-briefcase"></i>
+                        <span> Enroll Module </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarEnroll">
+                        <ul class="side-nav-second-level">
+                            <li>
+                                <a href="{{route('mange-enroll')}}">Manage Enroll</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            @endif
+
+            {{--            user content--}}
+
+            @if(auth()->user()->role_type === 3)
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#sidebarEnroll" aria-expanded="false"
+                       aria-controls="sidebarEnroll" class="side-nav-link">
+                        <i class="uil-briefcase"></i>
+                        <span> Enroll Module </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarEnroll">
+                        <ul class="side-nav-second-level">
+                            <li>
+                                <a href="{{route('my-enroll')}}">My Enroll</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#sidebarProjects" aria-expanded="false"
+                       aria-controls="sidebarProjects" class="side-nav-link">
+                        <i class="uil-briefcase"></i>
+                        <span> Contact Module <sup class="text-white px-1 rounded bg-secondary">pro</sup> </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarProjects">
+                        <ul class="side-nav-second-level">
+                            <li>
+                                <a href="#">Add Contact</a>
+                            </li>
+                            <li>
+                                <a href="#">Manage Contact</a>
+                            </li>
+
+                            <li>
+                                <a href="#">Add Documents <sup class="text-white px-1 rounded bg-success">pro</sup> </a>
+                            </li>
+                            <li>
+                                <a href="{{route('documents.index')}}">Manage Documents <sup class="text-white px-1 rounded bg-success">pro</sup> </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+            @endif
+
 
 
         </ul>

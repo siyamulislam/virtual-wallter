@@ -18,7 +18,7 @@
 
 <section class="py-2 bg-dark text-white">
     <div class="container">
-        <div class="row">ea
+        <div class="row">
             <div class="col-md-12">
                 <p class="text-center"> &copy; Vitrual Wallter 1999-{{date('Y')}}  | All rights reserved |  by  <span> <a href="https://siyamul.com">siyamul.com</a></span> </p>
             </div>

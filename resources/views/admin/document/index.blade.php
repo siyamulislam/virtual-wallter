@@ -14,14 +14,21 @@
                 <div class="card-header">
                     <div class="row">
                         <div class=" fw-normal display-6 text-secondary float-start">Manage Document
-{{--                            <a href="{{route('users.create')}}"--}}
+                            <a href="{{route('documents.create')}}"
                                class="btn btn-primary  float-end">Create</a>
+
+
+
                         </div>
                     </div>
+
                 </div>
 
             </div>
+
         </div>
+        <h1 class="text-success text-center mt-8">coming soon...</h1>
+
     </div>
 @endsection
 

@@ -19,8 +19,8 @@ class EnrollController extends Controller
 
         if (auth()->check()){
             $this->user=Auth::user();
-            if ($this->user->role_type==3){ 
-                
+            if ($this->user->role_type==3){
+
                 // $existEnroll = Enroll::where('package_id', $request->package_id)
                 // ->where('user_id', auth()->id())
                 // ->first();
@@ -28,10 +28,10 @@ class EnrollController extends Controller
                 $existEnroll = Enroll::where('user_id', auth()->id())
                 ->first();
 
-               if ($existEnroll){ 
-                //    if ($existEnroll->status==2) 
+               if ($existEnroll){
+                //    if ($existEnroll->status==2)
                        return redirect()->back()->with('error','you already using a package');
-               
+
                }
                 Enroll::placeOrder($request);
                 return redirect()->route('front.home')->with('success', "Your Order Placed Successfully");
@@ -51,6 +51,10 @@ class EnrollController extends Controller
 public function manageEnroll(){
         return view('admin.enroll.manage',[
             'enrolls'=>Enroll::latest()->get(),
+        ]);
+}public function myEnroll(){
+        return view('admin.enroll.my',[
+            'enrolls'=>Enroll::where('user_id', auth()->user()->id)->get()
         ]);
 }
     public function approveEnroll($id)

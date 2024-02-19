@@ -20,8 +20,9 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Title</th>
-                            <th>User</th>
+                            <th>Package Name</th>
+                            <th>User Name</th>
+                            <th>User Email</th>
                             <th>Price</th>
                             <th>Applied Date</th>
                             <th>Payment Method</th>
@@ -35,10 +36,11 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $enroll->package->title }}</td>
                                 <td>{{ $enroll->user->name }}</td>
+                                <td>{{ $enroll->user->email }}</td>
                                 <td>{{ $enroll->package->price }}</td>
                                 <td>{{ $enroll->created_at->format('d-m-Y') }}</td>
                                 <td>{{ $enroll->payment_method }}</td>
-                                <td>{{ $enroll->status==0?"Rejected":($enroll->status==1?"Pending":"Approved") }}</td>
+                                <td>{{ $enroll->status==0?"Rejected":($enroll->status==1?"Pending":"Paid") }}</td>
                                 <td class="float-end">
                                 <td>
                                     @if(!$enroll->status==0)

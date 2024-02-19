@@ -1,7 +1,7 @@
 <nav>
-    <div class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="navbar navbar-expand-md bg-dark navbar-dark fixed-top ">
         <div class="container">
-            <a href="{{route('front.home')}}" class="navbar-brand">Logo</a>
+            <a href="{{route('front.home')}}" class="navbar-brand"><i>Virtual Wallter</i></a>
             <ul class="navbar-nav ms-auto ">
                 <li><a href="{{route('front.home')}}" class="nav-link">Home</a></li>
 

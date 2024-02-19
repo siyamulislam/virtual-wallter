@@ -1,25 +1,4 @@
-##PHP ==>
-composer dump-autoload
-php -S 127.0.0.1:800
 
-##LARAVEL ==>
-composer create-project laravel/laravel laravel-app
-cd laravel-app
-php artisan serve
-php artisan serve --port=8080
-
-public> index.php
-Route> web.php
-
-//singular form
-php artisan make:controller CourseController
-php artisan make:controller Admin/CourseController
-php artisan make:controller Admin/CourseCategoryController -r
-php artisan make:migration create_users_table
-
-php artisan make:model Product
-php artisan make:model Product -m
-php artisan make:model Product -mc
 
 php artisan migrate
 php artisan migrate:fresh
@@ -27,65 +6,11 @@ php artisan migrate:fresh
 php artisan migrate:rollback
 php artisan migrate
 
-php artisan make:middleware EditorMiddle
-php artisan make:middleware UserMiddle
-php artisan make:middleware AdminMiddle
-migratrion file create
-
-
-
-php artisan make:migration  add_column_to_enrolls_table --table=enrolls
-
 
 composer install
 copy .env.example .env
 php artisan key:generate
 php artisan serve
-
-composer install
-
- Skills for Employment Investment Program
- BASIS Institute of Technology & Management
-#auth
-
-composer require laravel/jetstream:*
-
-composer require laravel/jetstream
-
-php artisan jetstream:install livewire
-#uninstall
-composer remove laravel/jetstream
-
-vendor>laravel>fortify>src>rule
-
-#admin theme
-https://file.fm/u/2dsarkswm
-
-https://freshdesignweb.com/ustora/
-
-https://www.000webhost.com/free-cpanel-hosting
-https://www.hostingadvice.com/how-to/free-cpanel-hosting/
-git add . && git commit -m "front nav and db role" && git push
-
-https://ckeditor.com/
-
-orm vs query builder
-
-php artisan route:list
-https://zerossl.com/
-
-
-
-intitle:index(of)? mp4 Avater 2
-
-user crud . name, email,role_type,password
-md5()/sha1() / hash:: make(string) / bcrypt() for password
-
-
-->get() array of collection
-->first() first object of array collection
-->take(2) 2 out of N -- Similar as limit()
-->skip(2) skip first 2 out of N
 
 
 

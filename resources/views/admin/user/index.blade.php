@@ -29,7 +29,6 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Role</th>
-                            <th>Password</th>
                             <th class="">Actions</th>
                         </tr>
                         </thead>
@@ -40,7 +39,6 @@
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->role_type==1?"Admin":($user->role_type==2?"Editor":"User")}}</td>
-                                <td>{{\Illuminate\Support\Str::limit($user->password,35)}}</td>
 
                                 <td class="">
                                     <a href="{{route('users.show',$user->id)}}"

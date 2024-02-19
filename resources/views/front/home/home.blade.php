@@ -38,7 +38,7 @@
         </button>
     </div>
 
-    <section class="py-5">
+    <section class="pt-3 min-vh-100">
         <div class="container">
             <div class="row">
                 <div class="col-12">

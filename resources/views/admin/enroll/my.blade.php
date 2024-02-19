@@ -10,7 +10,7 @@
             <div class="card ">
                 <div class="card-header">
                     <div class="row">
-                        <div class=" fw-normal display-6 text-secondary float-start">Manage Enroll
+                        <div class=" fw-normal display-6 text-secondary float-start">My Enrolled Package
 
                         </div>
                     </div>
@@ -27,7 +27,6 @@
                             <th>Applied Date</th>
                             <th>Payment Method</th>
                             <th>Status</th>
-                            <th class="float-end">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -42,17 +41,7 @@
                                 <td>{{ $enroll->payment_method }}</td>
                                 <td>{{ $enroll->status==0?"Rejected":($enroll->status==1?"Pending":"Paid") }}</td>
                                 <td class="float-end">
-                                <td>
-                                    @if(!$enroll->status==0)
-                                        <a href="{{route('enroll.approve',['id'=>$enroll->id])}}"
-                                           class="me-1 btn btn-sm {{ $enroll->status==1 ? 'btn-warning' : 'btn-success' }}"
-                                           title="update enroll">
-                                            <i class="{{ $enroll->status==1 ? 'uil-arrow-down' : 'uil-arrow-up' }}"></i></a>
-                                    @endif
-                                    <a href="{{route('enroll.reject',['id'=>$enroll->id])}}"
-                                       class="btn btn-{{ $enroll->status==0 ? 'danger' : 'light' }} btn-sm "><i
-                                            class="{{ $enroll->status==0 ? 'uil-lock-alt' : 'uil-unlock-alt' }}"></i></a>
-                                </td>
+
                             </tr>
                         @endforeach
                         </tbody>
